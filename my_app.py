@@ -4,6 +4,12 @@
 # In[ ]:
 
 
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[ ]:
+
+
 import streamlit as st 
 import pandas as pd
 import numpy as np
@@ -12,7 +18,7 @@ import pickle
 import warnings
 
 
-st.set_page_config(page_title="Transformer Recommender", page_icon="⚡️", layout='centered', initial_sidebar_state="collapsed") 
+st.set_page_config(page_title="Transformer Recommender", page_icon="⚡️", layout='centered', initial_sidebar_state="collapsed")
 
 def load_model(modelfile):
     loaded_model = pickle.load(open(modelfile, 'rb'))
@@ -49,18 +55,19 @@ def main():
         Ib = st.number_input("Current Phase B", 1,10000)
         Ic = st.number_input("Current Phase C",1,10000)
         Min_V_peak = st.number_input("Minimun Voltage",1,10000)
+        Max_dis = st.number_input("Maximum Distance",1,10000)
 
-        feature_list = [Load_peak, Ia, Ib, Ic, Min_V_peak]
+        feature_list = [Load_peak, Ia, Ib, Ic, Min_V_peak, Max_dis]
         single_pred = np.array(feature_list).reshape(1,-1)
         
         if st.button('Predict'):
 
-            loaded_model = load_model('model.pkl')
+            loaded_model = load_model('C:/Users/tarnn/Desktop/JK/inno66/GIS_Inno_07_08_66_Some_Input_Features/model.pkl')
             prediction = loaded_model.predict(single_pred)
             col1.write('''
             ## Results 🔍 
             ''')
-            col1.success(f"{prediction.item().title()} are recommended by the A.I for your area.")
+            col1.success(f"{prediction.item()} kVA are recommended by the A.I for your area.")
       #code for html ☘️ 🌾 🌳 👨‍🌾  🍃
 
     st.warning("Note: This A.I application is for educational/demo purposes only and cannot be relied upon. Check the source code [here](https://github.com/puwaphat/gis)")
