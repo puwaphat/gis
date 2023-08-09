@@ -22,7 +22,7 @@ def main():
     # title
     html_temp = """
     <div>
-    <h1 style="color:MEDIUMSEAGREEN;text-align:left;"> Crop Recommendation  🌱 </h1>
+    <h1 style="color:MEDIUMSEAGREEN;text-align:left;"> Transformer Recommendation  🌱 </h1>
     </div>
     """
     st.markdown(html_temp, unsafe_allow_html=True)
@@ -32,13 +32,13 @@ def main():
     with col1: 
         with st.expander(" ℹ️ Information", expanded=True):
             st.write("""
-            Crop recommendation is one of the most important aspects of precision agriculture. Crop recommendations are based on a number of factors. Precision agriculture seeks to define these criteria on a site-by-site basis in order to address crop selection issues. While the "site-specific" methodology has improved performance, there is still a need to monitor the systems' outcomes.Precision agriculture systems aren't all created equal. 
-            However, in agriculture, it is critical that the recommendations made are correct and precise, as errors can result in significant material and capital loss.
+            Transformer recommendation is one of the most important aspects of precision power. It is based on a number of factors. Precision power seeks to define these criteria on a site-by-site basis in order to address TR selection issues. Precision power systems aren't all created equal. 
+            However, in PEA, it is critical that the recommendations made are correct and precise, as errors can result in significant material and capital loss.
 
             """)
         '''
         ## How does it work ❓ 
-        Complete all the parameters and the machine learning model will predict the most suitable crops to grow in a particular farm based on various parameters
+        Complete all the parameters and the machine learning model will predict the most suitable transformer to plan in a particular area based on various parameters
         '''
 
 
@@ -63,7 +63,7 @@ def main():
             col1.success(f"{prediction.item().title()} are recommended by the A.I for your area.")
       #code for html ☘️ 🌾 🌳 👨‍🌾  🍃
 
-    st.warning("Note: This A.I application is for educational/demo purposes only and cannot be relied upon. Check the source code [here](https://github.com/gabbygab1233/Crop-Recommendation)")
+    st.warning("Note: This A.I application is for educational/demo purposes only and cannot be relied upon. Check the source code [here](https://github.com/puwaphat/gis)")
     hide_menu_style = """
     <style>
     #MainMenu {visibility: hidden;}
