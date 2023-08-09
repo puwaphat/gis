@@ -12,7 +12,7 @@ import pickle
 import warnings
 
 
-st.set_page_config(page_title="Transformer Recommender", page_icon="🪫", layout='centered', initial_sidebar_state="collapsed") 
+st.set_page_config(page_title="Transformer Recommender", page_icon="⚡️", layout='centered', initial_sidebar_state="collapsed") 
 
 def load_model(modelfile):
     loaded_model = pickle.load(open(modelfile, 'rb'))
@@ -22,7 +22,7 @@ def main():
     # title
     html_temp = """
     <div>
-    <h1 style="color:MEDIUMSEAGREEN;text-align:left;"> Transformer Recommendation  🌱 </h1>
+    <h1 style="color:MEDIUMSEAGREEN;text-align:left;"> Transformer Recommendation  🔋 </h1>
     </div>
     """
     st.markdown(html_temp, unsafe_allow_html=True)
